@@ -239,31 +239,40 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-size: cover;
   background-repeat: no-repeat;
 }
+@keyframes starWarsAnimation {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
 .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(163, 163, 137, 0.5) -5.91%, rgba(150, 150, 148, 0.5) 111.58%);
-  border: 1px solid rgb(255, 255, 255);
+  background: linear-gradient(90.21deg, rgba(151, 151, 150, 0.5) -5.91%, rgba(38, 38, 38, 0.5) 111.58%);
+  border: none;
   font-size: 18px;
   margin-bottom: 16px;
   display: inline-block;
+  animation: starWarsAnimation 3.5s ease-out;
+  font-family: 'Star Jedi', sans-serif;
+  color: #f0f0f0; /* Amarelo Star Wars */
 }
-.banner h1 {
-  font-size: 65px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1;
-  margin-bottom: 20px;
-  display: block;
-}
+
+/* Paleta de Cores Star Wars */
 .banner p {
-  color: #ffffff;
+  color: #ffffff; /* Amarelo Star Wars */
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
 }
+
 .banner button {
   color: #e9e9e9;
   font-weight: 700;
@@ -273,31 +282,39 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   align-items: center;
 }
+
 .banner button svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
+
 .banner button:hover svg {
   margin-left: 25px;
 }
+
 .banner img {
   animation: updown 3s linear infinite;
 }
+
 @keyframes updown {
-    0% {
-        transform: translateY(-20px);
-    }
-    50% {
-        transform: translateY(20px);
-    }
-    100% {
-        transform: translateY(-20px);
-    }
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
+
+/* Fonte de Star Wars */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
 .txt-rotate > .wrap {
-  border-right: 0.08em solid #fafafa;
+  border-right: 0.08em solid #ffffff; /* Amarelo Star Wars */
+  font-family: 'Roboto Mono', monospace; /* Fonte que se assemelha à usada em Star Wars */
 }
 
 /************ Skills Css ************/
@@ -305,39 +322,54 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 0 0 50px 0;
   position: relative;
 }
+
 .skill-bx {
-  background: #151515;
+  background: #262626;
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
   margin-top: -60px;
 }
+
 .skill h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 45px;
+  font-weight: 700;
+  color: #ffffff;
 }
+
 .skill p {
-    color: #B8B8B8;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    margin: 14px 0 75px 0;
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
 }
+
 .skill-slider {
   width: 80%;
   margin: 0 auto;
   position: relative;
 }
+
 .skill-slider .item img {
-  width: 50%;
+  max-width: 80px; /* Reduzi o tamanho máximo dos ícones para 50 pixels */
+  height: auto;
   margin: 0 auto 15px auto;
 }
+
 .background-image-left {
   top: 28%;
   position: absolute;
   bottom: 0;
   width: 40%;
   z-index: -4;
+}
+
+/* Fonte de Star Wars */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+.skill h2, .skill p {
+  font-family: 'Roboto Mono', monospace;
 }
 
 /************ Projects Css ************/
@@ -352,7 +384,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
 }
 .project p {
-  color: #B8B8B8;
+  color: #ffffff;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -385,16 +417,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: 0;
 }
 .project .nav.nav-pills .nav-link::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90.21deg, #525151 -5.91%, #c2c2c2 111.58%);
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90.21deg, rgba(20, 20, 20, 0.9) -5.91%, rgba(60, 60, 60, 1) 111.58%);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
 }
+
 .project .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
 }
@@ -421,20 +454,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  opacity: 0.85;
+  background: linear-gradient(90.21deg, rgba(0, 0, 0, 0.9) -5.91%, rgba(20, 20, 20, 1) 111.58%);
+  opacity: 0.9;
   position: absolute;
   width: 100%;
   height: 0;
   transition: 0.4s ease-in-out;
 }
+
 .proj-imgbx:hover::before {
   height: 100%;
 }
 .proj-txtx {
   position: absolute;
   text-align: center;
-  top: 65%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.5s ease-in-out;
@@ -466,11 +500,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
-/************ Projects Css ************/
+/************ Contact Cssa ************/
 .contact {
-  background: linear-gradient(90.21deg, #494949 -5.91%, #bbbabd 111.58%);
+  background: linear-gradient(90deg, #808080 0%, #C0C0C0 100%);
   padding: 60px 0 200px 0;
 }
+
 .contact img {
   width: 92%;
 }
@@ -541,7 +576,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
-  background-image: url('./assets/img/footer-bg.png');
+  background-image: url('./assets/img/color-sharp2.jpeg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
