@@ -12,7 +12,7 @@ import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const projects = [
+  const project = [
     {
       title: "Docker",
       description: "Do básico ao avançado",
@@ -56,7 +56,7 @@ export const Projects = () => {
                   <h2 style={{ color: '#fff', fontFamily: 'Roboto Mono, monospace', fontSize: '45px', fontWeight: '700', marginBottom: '20px' }}>Certificados</h2>
                   <p style={{ color: '#fff', fontSize: '18px', letterSpacing: '0.8px', lineHeight: '1.5em', marginBottom: '40px' }}>Alguns dos meus certificados!</p>
                   <Row>
-                    {projects.map((project, index) => (
+                    {project.map((project, index) => (
                       <ProjectCard
                         key={index}
                         {...project}

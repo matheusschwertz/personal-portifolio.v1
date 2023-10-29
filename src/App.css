@@ -118,8 +118,8 @@ span.navbar-text {
     margin-left: 14px;
 }
 .social-icon a {
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
     background: rgba(217, 217, 217, 0.1);
     display: inline-flex;
     border-radius: 50%;
@@ -131,8 +131,8 @@ span.navbar-text {
 }
 .social-icon a::before {
     content: "";
-    width: 42px;
-    height: 42px;
+    width: 52px;
+    height: 52px;
     position: absolute;
     background-color: #ffffff;
     border-radius: 50%;
@@ -251,9 +251,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner .tagline {
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.8px;
-  padding: 8px 10px;
+  padding: 10px 10px;
   background: linear-gradient(90.21deg, rgba(151, 151, 150, 0.5) -5.91%, rgba(38, 38, 38, 0.5) 111.58%);
   border: none;
   font-size: 18px;
@@ -295,18 +295,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner img {
-  animation: updown 3s linear infinite;
+  animation: updown 12s linear infinite;
 }
 
 @keyframes updown {
   0% {
-    transform: translateY(-20px);
+    transform: translateY(-100px);
   }
   50% {
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   100% {
-    transform: translateY(-20px);
+    transform: translateY(-100px);
   }
 }
 
@@ -326,7 +326,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill-bx {
   background: #262626;
   border-radius: 64px;
-  text-align: center;
   padding: 60px 50px;
   margin-top: -60px;
 }
@@ -352,7 +351,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .skill-slider .item img {
-  max-width: 80px; /* Reduzi o tamanho máximo dos ícones para 50 pixels */
+  max-width: 80px;
   height: auto;
   margin: 0 auto 15px auto;
 }

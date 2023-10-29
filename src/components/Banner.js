@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -9,10 +9,10 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [delta, setDelta] = useState(300 - Math.random() * 350);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "DevOps Enginner" ];
-  const period = 2000;
+  const toRotate = ["graduando em Ciência da Computação"];
+  const period = 1000;
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -54,12 +54,14 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Bem vindo ao meu Portfólio</span>
-                <h1>{`Olá! Eu sou Matheus`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Desenvolvedor Web", "Designer Web", "Designer UI/UX" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Olá! Sou um entusiasta de tecnologia apaixonado por criar experiências no cenário de automatização.</p>
-                  <button onClick={() => console.log('conectar')}>Vamos Conectar <ArrowRightCircle size={25} /></button>
-              </div>}
+                <div className={isVisible ? "animate__animated animate__fadeIn starWars" : ""}>
+                  <span className="tagline">Bem vindo ao meu Portfólio</span>
+                  <h1>{`Olá! Eu sou Matheus`} <span className="txt-rotate" data-period="1000" data-rotate='[ "" ]'><span className="wrap">{text}</span></span></h1>
+                  <p style={{background: '#000', padding: '10px', borderRadius: '5px'}}>
+                    Sou um entusiasta de tecnologia e estudo no cenário de DevOps, apaixonado por criar experiências inovadoras no mundo da automação.
+                  </p>               
+                  <button onClick={() => window.location.href = 'https://www.linkedin.com/in/matheus-schwertz-dos-santos-90785219a/'}>Vamos Conectar <ArrowRightCircle size={25} /></button>
+                </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
