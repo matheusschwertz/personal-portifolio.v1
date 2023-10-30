@@ -1,4 +1,6 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import React from "react";
+import PropTypes from 'prop-types';
+import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
@@ -12,7 +14,7 @@ import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const project = [
+  const projects = [
     {
       title: "Docker",
       description: "Do básico ao avançado",
@@ -56,7 +58,7 @@ export const Projects = () => {
                   <h2 style={{ color: '#fff', fontFamily: 'Roboto Mono, monospace', fontSize: '45px', fontWeight: '700', marginBottom: '20px' }}>Certificados</h2>
                   <p style={{ color: '#fff', fontSize: '18px', letterSpacing: '0.8px', lineHeight: '1.5em', marginBottom: '40px' }}>Alguns dos meus certificados!</p>
                   <Row>
-                    {project.map((project, index) => (
+                    {projects.map((project, index) => (
                       <ProjectCard
                         key={index}
                         {...project}
@@ -71,4 +73,10 @@ export const Projects = () => {
       </Container>
     </section>
   )
+}
+
+Projects.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired
 }

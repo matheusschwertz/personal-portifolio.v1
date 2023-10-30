@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp2.jpeg";
-
 import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
@@ -26,7 +26,7 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="skill d-flex justify-content-center align-items-center" id="skills" style={{ backgroundImage: `url(${colorSharp})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="skill d-flex justify-content-center align-items-center" id="skills" style={{ backgroundImage: `url(${colorSharp})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '300px' }}>
       <div className="container text-center">
         <div className="row">
           <div className="col-12">
@@ -50,3 +50,7 @@ export const Skills = () => {
     </section>
   );
 };
+
+Skills.propTypes = {
+  // Se houver props, adicione PropTypes aqui
+}

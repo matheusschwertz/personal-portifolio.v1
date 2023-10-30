@@ -318,11 +318,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Skills Css ************/
+
+/* Estilos para a seção de habilidades */
 .skill {
   padding: 0 0 50px 0;
   position: relative;
 }
 
+/* Caixa de habilidades */
 .skill-bx {
   background: #262626;
   border-radius: 64px;
@@ -330,12 +333,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: -60px;
 }
 
+/* Título da seção de habilidades */
 .skill h2 {
   font-size: 45px;
   font-weight: 700;
   color: #ffffff;
 }
 
+/* Parágrafos na seção de habilidades */
 .skill p {
   color: #B8B8B8;
   font-size: 18px;
@@ -344,18 +349,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin: 14px 0 75px 0;
 }
 
+/* Slider de habilidades */
 .skill-slider {
   width: 80%;
   margin: 0 auto;
   position: relative;
 }
 
+/* Imagens do slider de habilidades */
 .skill-slider .item img {
   max-width: 80px;
   height: auto;
   margin: 0 auto 15px auto;
 }
 
+/* Imagem de fundo à esquerda */
 .background-image-left {
   top: 28%;
   position: absolute;
@@ -364,9 +372,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
-/* Fonte de Star Wars */
+/* Importando a fonte 'Roboto Mono' de Star Wars */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
 
+/* Aplicando a fonte 'Roboto Mono' aos elementos de texto */
 .skill h2, .skill p {
   font-family: 'Roboto Mono', monospace;
 }

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import PropTypes from 'prop-types';
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-export const Banner = () => {
+export const Banner = ({ linkedinLink }) => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
@@ -20,7 +21,7 @@ export const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [text])
+  }, [text, delta])
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -50,24 +51,24 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center"> {/* Corrigido typo no nome da classe */}
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn starWars" : ""}>
+                <div className={isVisible && "animate__animated animate__fadeIn starWars"}> {/* Utilizando short-circuit evaluation */}
                   <span className="tagline">Bem vindo ao meu Portfólio</span>
-                  <h1>{`Olá! Eu sou Matheus`} <span className="txt-rotate" data-period="1000" data-rotate='[ "" ]'><span className="wrap">{text}</span></span></h1>
+                  <h1>{`Olá! Eu sou Matheus`} <span className="text-rotating-animation" data-period="1000" data-rotate='[ "" ]'><span className="wrap">{text}</span></span></h1> {/* Melhorando nome da classe */}
                   <p style={{background: '#000', padding: '10px', borderRadius: '5px'}}>
                     Sou um entusiasta de tecnologia e estudo no cenário de DevOps, apaixonado por criar experiências inovadoras no mundo da automação.
                   </p>               
-                  <button onClick={() => window.location.href = 'https://www.linkedin.com/in/matheus-schwertz-dos-santos-90785219a/'}>Vamos Conectar <ArrowRightCircle size={25} /></button>
+                  <button onClick={() => window.open(linkedinLink, '_blank')}>Vamos Conectar <ArrowRightCircle size={25} /></button> {/* Usando window.open */}
                 </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                <div className={isVisible && "animate__animated animate__zoomIn"}> {/* Utilizando short-circuit evaluation */}
                   <img src={headerImg} alt="Imagem do Cabeçalho"/>
                 </div>}
             </TrackVisibility>
@@ -76,4 +77,8 @@ export const Banner = () => {
       </Container>
     </section>
   )
+}
+
+Banner.propTypes = {
+  linkedinLink: PropTypes.string.isRequired // Definindo propTypes para linkedinLink
 }
