@@ -3,25 +3,23 @@ const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 
-// server used to send send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
-app.listen(3001, () => console.log("Server Running"));
+app.listen(5000, () => console.log("Server Running"));
 
-const contactEmail = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true, 
-  service: 'gmail',
+const transporter = nodemailer.createTransport({
+  host: "smtp.office365.com",
+  port: 587,
+  secure: false,
   auth: {
-    user: 'matheusschwertz9@gmail.com',
-    pass: '33295453',
+    user: "matheusschwertz1@outlook.com",
+    pass: "Ggamora33295453-",
   },
 });
 
-contactEmail.verify((error) => {
+transporter.verify((error) => {
   if (error) {
     console.log(error);
   } else {
@@ -36,14 +34,14 @@ router.post("/contact", (req, res) => {
   const phone = req.body.phone;
   const mail = {
     from: name,
-    to: "matheusschwertz9@gmail.com",
-    subject: "Contact Form Submission - Portfolio",
+    to: "matheusschwertz1@outlook.com",
+    subject: "Formulário de Contato - Portfólio",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Phone: ${phone}</p>
            <p>Message: ${message}</p>`,
   };
-  contactEmail.sendMail(mail, (error) => {
+  transporter.sendMail(mail, (error) => {
     if (error) {
       res.json(error);
     } else {

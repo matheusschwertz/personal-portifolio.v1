@@ -25,21 +25,27 @@ export const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Formulário Enviado'); // Verifica se a função está sendo chamada
     setButtonText("Enviando...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Enviar");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({ sucesso: true, mensagem: 'Mensagem enviada com sucesso' });
-    } else {
-      setStatus({ sucesso: false, mensagem: 'Algo deu errado, por favor tente novamente mais tarde.' });
+    try {
+      let response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formDetails),
+      });
+      setButtonText("Enviar");
+      let result = await response.json();
+      setFormDetails(formInitialDetails);
+      if (result.code === 200) {
+        setStatus({ sucesso: true, mensagem: 'Mensagem enviada com sucesso' });
+      } else {
+        setStatus({ sucesso: false, mensagem: 'Algo deu errado, por favor tente novamente mais tarde.' });
+      }
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      setStatus({ sucesso: false, mensagem: 'Erro ao enviar o formulário, por favor tente novamente mais tarde.' });
     }
   };
 
