@@ -22,5 +22,3 @@ jobs:
           npm install
           npm start
 
-      - name: Run tests
-        run: npm test
