@@ -1,8 +1,9 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import MeuComponente from './MeuComponente'; // Importe o componente que você quer testar
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('rendereiza um botão com texto "Clique aqui"', () => {
+  render(<MeuComponente />);
+  const botao = screen.getByText(/Clique aqui/i);
+  expect(botao).toBeInTheDocument();
 });
