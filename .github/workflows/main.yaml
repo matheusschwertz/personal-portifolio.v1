@@ -20,5 +20,9 @@ jobs:
       - name: Install dependences
         run: |
           npm install
-          npm start
+
+      - name: test
+        run: |
+          npm test
+
 
